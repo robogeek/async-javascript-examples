@@ -1,0 +1,15 @@
+{
+  "name": "promise-examples",
+  "version": "1.0.0",
+  "description": "",
+  "main": "2files.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Herron <david@davidherron.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bluebird": "^3.4.6",
+    "fs-extra-promise": "^0.4.1"
+  }
+}
