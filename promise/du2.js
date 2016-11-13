@@ -3,16 +3,20 @@
 const fs    = require('fs-extra-promise');
 const util  = require('util');
 
-var total = 0;
-
-Promise.all(process.argv.slice(2).map(fname => {
-    return fs.statAsync(fname)
-    .then(stat => {
-        total += stat.size;
+var du = function(filez) {
+    var total = 0;
+    return Promise.all(filez.map(fname => {
+        return fs.statAsync(fname)
+        .then(stat => {
+            total += stat.size;
+            return total;
+        });
+    }))
+    .then(results => {
         return total;
     });
-}))
-.then(results => {
-    console.log(total);
-})
+};
+
+du(process.argv.slice(2))
+.then(total => { console.log(total); })
 .catch(err => { console.error(err.stack); });

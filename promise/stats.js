@@ -3,9 +3,13 @@
 const fs    = require('fs-extra-promise');
 const util  = require('util');
 
-Promise.all(process.argv.slice(2).map(fname => {
-    return fs.statAsync(fname);
-}))
+var stats = function(filez) {
+    return Promise.all(filez.map(fname => {
+        return fs.statAsync(fname);
+    }));
+};
+
+stats(process.argv.slice(2))
 .then(results => {
     results.forEach(result => {
         console.log(util.inspect(result));

@@ -8,8 +8,11 @@ async.doWhilst(
     next => {
         new Promise((resolve, reject) => {
             random = Math.random();
-            console.log(random);
             count++;
+            resolve(random);
+        })
+        .then(random => {
+            console.log(random);
             next();
         });
     },
