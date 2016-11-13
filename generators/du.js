@@ -3,8 +3,7 @@
 const fs    = require('fs-extra-promise');
 const co    = require('co');
 
-co(function* () {
-    var filez = process.argv.slice(2);
+var du = co.wrap(function* (filez) {
     var total = 0;
     for (var filenm of filez) {
         var stats = yield fs.statAsync(filenm);
@@ -12,6 +11,8 @@ co(function* () {
     }
     return total;
 })
+
+du(process.argv.slice(2))
 .then(total => {
     console.log(total);
 })

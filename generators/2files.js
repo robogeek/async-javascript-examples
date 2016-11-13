@@ -6,8 +6,8 @@ const util  = require('util');
 
 co(function* () {
     var texts = [
-        yield fs.readFileAsync('../generators/hello.txt', 'utf8'),
-        yield fs.readFileAsync('../generators/goodbye.txt', 'utf8')
+        yield fs.readFileAsync('hello.txt', 'utf8'),
+        yield fs.readFileAsync('goodbye.txt', 'utf8')
     ];
     console.log(util.inspect(texts));
 });
