@@ -5,10 +5,14 @@ const util  = require('util');
 
 async function twofiles() {
     var texts = [
-        await fs.readFileAsync('../generators/hello.txt', 'utf8'),
-        await fs.readFileAsync('../generators/goodbye.txt', 'utf8')
+        await fs.readFileAsync('hello.txt', 'utf8'),
+        await fs.readFileAsync('goodbye.txt', 'utf8')
     ];
-    console.log(util.inspect(texts));
+    return texts;
 }
 
-twofiles();
+twofiles()
+.then(texts => {
+    console.log(util.inspect(texts));
+})
+.catch(err => { console.error(err.stack); });

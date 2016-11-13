@@ -6,7 +6,8 @@ async function access(filez) {
     var ret = [];
     for (var filenm of filez) {
         try {
-            await fs.accessAsync(filenm, fs.constants.W_OK);
+            await fs.accessAsync(filenm,
+                fs.constants ? fs.constants.W_OK : fs.W_OK);
             // Whether access is allowed is indicated by not throwing an error
             ret.push(filenm);
         } catch (e) { }
