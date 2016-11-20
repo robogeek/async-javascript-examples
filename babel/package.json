@@ -1,0 +1,30 @@
+{
+  "name": "babel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --plugins=transform-async-to-generator,transform-exponentiation-operator --out-dir lib",
+    "watch": "babel src --watch --plugins=transform-async-to-generator,transform-exponentiation-operator --out-dir lib"
+  },
+  "author": "David Herron <david@davidherron.com>",
+  "license": "ISC",
+  "babel": {
+    "plugins": [
+      "transform-es2015-modules-commonjs",
+      "transform-async-to-generator",
+      "transform-exponentiation-operator"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-async-to-generator": "^6.18.0",
+    "babel-plugin-transform-exponentiation-operator": "^6.8.0",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-es2015-node": "^6.1.1",
+    "babel-preset-es2016": "^6.16.0",
+    "babel-preset-node6": "^11.0.0",
+    "babel-preset-stage-3": "^6.17.0"
+  }
+}
