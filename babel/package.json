@@ -4,18 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "babel src --plugins=transform-async-to-generator,transform-exponentiation-operator --out-dir lib",
-    "watch": "babel src --watch --plugins=transform-async-to-generator,transform-exponentiation-operator --out-dir lib"
+    "build": "babel src --out-dir lib",
+    "watch": "babel src --watch  --out-dir lib"
   },
   "author": "David Herron <david@davidherron.com>",
   "license": "ISC",
-  "babel": {
-    "plugins": [
-      "transform-es2015-modules-commonjs",
-      "transform-async-to-generator",
-      "transform-exponentiation-operator"
-    ]
-  },
   "devDependencies": {
     "babel-cli": "^6.18.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
