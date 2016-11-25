@@ -1,0 +1,27 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "server": "SERVERPORT=3333 node app.js",
+    "build": "babel src --out-dir public"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.1.2",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "ejs": "*",
+    "co": "*",
+    "babel-polyfill": "*"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.18.0",
+    "babel-plugin-transform-exponentiation-operator": "^6.8.0",
+    "babel-cli": "*"
+  }
+}
