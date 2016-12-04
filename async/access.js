@@ -7,8 +7,13 @@ const util  = require('util');
 const access = function(filez, fini) {
     async.filter(filez, (fname, next) => {
         fs.access(fname, fs.constants ? fs.constants.W_OK : fs.W_OK, err => {
-            if (err) next(null, false);
-            else next(null, true);
+            if (err && 'code' in err && err.code === 'EACCES') {
+                next(null, false);
+            } else if (err) {
+                next(err);
+            } else {
+                next(null, true);
+            }
         });
     },
     (err, results) => {

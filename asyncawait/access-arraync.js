@@ -13,7 +13,9 @@ async function access(filez) {
         } catch (e) {
             // Otherwise the file is not accessible, and
             // it is to be excluded.
-            return false;
+            if (!(err && 'code' in err && err.code === 'EACCES')) {
+                throw err;
+            } else return false;
         }
     });
 }

@@ -12,7 +12,11 @@ var access = co.wrap(function* (filez) {
                 fs.constants ? fs.constants.W_OK : fs.W_OK);
             // Whether access is allowed is indicated by not throwing an error
             allowed.push(filenm);
-        } catch (e) {  }
+        } catch (err) {
+            if (!(err && 'code' in err && err.code === 'EACCES')) {
+                throw err;
+            }
+        }
     }
     return allowed;
 });

@@ -9,8 +9,13 @@ var access = function(filez) {
             fs.access(fname,
                 fs.constants ? fs.constants.W_OK : fs.W_OK,
             err => {
-                if (err) resolve({ fname, keep: false });
-                else resolve({ fname, keep: true });
+                if (err && 'code' in err && err.code === 'EACCES') {
+                    resolve({ fname, keep: false });
+                } else if (err) {
+                    reject(err);
+                } else {
+                    resolve({ fname, keep: true });
+                }
             });
         });
     }))
