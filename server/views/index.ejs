@@ -26,6 +26,11 @@
                 2 Texts
             </a>
         </li>
+        <li role="presentation">
+            <a href="#lorem" aria-controls="lorem" role="tab" data-toggle="tab">
+                Lorem Ipsum
+            </a>
+        </li>
       </ul>
 
       <!-- Tab panes -->
@@ -35,6 +40,13 @@
             <div id="2texts-hello"></div>
             <div id="2texts-goodbye"></div>
             <button id="btn-fetch-2-texts" type="button" class="btn btn-primary">
+                Fetch
+            </button>
+        </div>
+
+        <div role="tabpanel" class="tab-pane" id="lorem">
+            <div id="lorem-text"></div>
+            <button id="btn-fetch-lorem" type="button" class="btn btn-primary">
                 Fetch
             </button>
         </div>
@@ -50,5 +62,6 @@
 <!-- <script src="/2texts-promise.js"></script> -->
 <!-- <script src="/2texts-generators.js"></script> -->
 <script src="/2texts-asyncawait.js"></script>
+<script src="/fetch-lorem-text.js"></script>
 </body>
 </html>

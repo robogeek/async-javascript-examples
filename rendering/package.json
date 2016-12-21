@@ -1,0 +1,18 @@
+{
+  "name": "rendering-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Herron <david@davidherron.com>",
+  "license": "ISC",
+  "dependencies": {
+    "co": "*",
+    "ejs": "^2.5.2",
+    "fs-extra-promise": "^0.4.1",
+    "gray-matter": "^2.0.2",
+    "markdown-it": "^8.0.0"
+  }
+}
