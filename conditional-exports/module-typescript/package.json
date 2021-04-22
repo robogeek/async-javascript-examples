@@ -1,0 +1,23 @@
+{
+  "name": "conditional-exports-module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "exports": {
+    "require": "./index.cjs",
+    "import": "./index.mjs"
+  },
+  "type": "commonjs",
+  "types": "./index.d.ts",
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:es6",
+    "build:cjs": "tsc --target es2018 --module commonjs index.ts && mv index.js index.cjs",
+    "build:es6": "tsc --types --sourceMap --declaration --declarationMap --target es2018 --module es2020 index.ts && mv index.js index.mjs"
+  },
+  "keywords": [],
+  "author": "David Herron <david@davidherron.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.2.4"
+  }
+}

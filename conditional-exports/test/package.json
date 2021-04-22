@@ -1,0 +1,15 @@
+{
+  "name": "conditional-exports-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "test": "npm run test:js && npm run test:es6",
+    "test:js": "node test.js",
+    "test:es6cjs": "node test-es6.js",
+    "test:es6": "node test.mjs"
+  },
+  "keywords": [],
+  "author": "David Herron <david@davidherron.com>",
+  "license": "ISC"
+}

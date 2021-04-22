@@ -4,7 +4,9 @@ const aasync = import('./async.mjs');
 console.log(aasync);
 
 async function hello() {
-    return (await aasync).hello();
+    let ret = (await aasync).hello();
+    console.log(aasync);
+    return ret;
 }
 module.exports.hello = hello;
 
@@ -19,21 +21,3 @@ function helloCB(done) {
     });
 }
 module.exports.helloCB = helloCB;
-
-async function callHello() {
-    let h = await module.exports.hello();
-    console.log(h);
-}
-
-callHello()
-.then(() => { console.log('callHello SUCCESS'); console.log(aasync); })
-.catch(err => { console.log('callHello ERROR ', err); })
-
-helloCB((err, msg) => {
-    if (err) {
-        console.log('helloCB ERROR ', err);
-    } else {
-        console.log('helloCB SUCCESS ', msg);
-        console.log(aasync);
-    }
-});
